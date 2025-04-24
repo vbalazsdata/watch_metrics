@@ -9,12 +9,11 @@ from utils import get_data
 # Adatok betöltése
 df = get_data()
 
-st.markdown("## Visualize your data insights through interactive charts")
-st.markdown("Explore trends, correlations, and patterns with dynamic graphs to make data analysis easier and more intuitive.")
-
-st.markdown("---")  # Optional: visual separator
 # Oldalcím
 st.title("Metrics Overview")
+
+st.markdown("## Visualize your data insights through interactive charts")
+st.markdown("Explore trends, correlations, and patterns with dynamic graphs to make data analysis easier and more intuitive.")
 
 # Másolat a DataFrame-ből, amit szűrni fogunk
 filtered_df = df.copy()

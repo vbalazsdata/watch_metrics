@@ -6,7 +6,7 @@ from utils import get_data
 df = get_data()
 
 # Oldalcím
-st.title("Dtabase explorer")
+st.title("Data explorer")
 
 
 # Másolat a DataFrame-ből, amit szűrni fogunk
