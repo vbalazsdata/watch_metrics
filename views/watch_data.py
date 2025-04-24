@@ -6,7 +6,7 @@ from utils import get_data
 df = get_data()
 
 # Oldalcím
-st.title("Metrics Overview")
+st.title("Metrics Overviewxxxx")
 
 
 # Másolat a DataFrame-ből, amit szűrni fogunk
