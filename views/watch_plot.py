@@ -123,6 +123,9 @@ else:
     # Bottom row: bar chart across full width
     col3 = st.container()
 
+# Bottom row: 2 columns (Date chart + ChatGPT box)
+    col3, col4 = st.columns(2)
+
     with col3:
         st.write("### 📊 Distribution by Date")
         filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
@@ -145,6 +148,19 @@ else:
             xaxis=dict(type='category')
         )
         st.plotly_chart(date_fig, use_container_width=True)
+
+    with col4:
+        st.write("### 💬 Ask about the data")
+        
+        # Display a chat box and respond
+        user_input = st.chat_input("Ask me a question about the data...")
+        if user_input:
+            # Dummy response for now; you can replace this with actual logic
+            st.write(f"**You asked:** {user_input}")
+            # Here you could add logic like keyword-based answers or use LangChain/OpenAI if external integration is possible
+            st.write("🔍 (Pretending to analyze data...)")
+            st.write("📈 I'm just a placeholder! But in a real app, I could tell you insights from your data.")
+
 
 
 
