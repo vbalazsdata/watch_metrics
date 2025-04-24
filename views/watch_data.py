@@ -6,7 +6,7 @@ from utils import get_data
 df = get_data()
 
 # Oldalcím
-st.title("Metrics Overviewxxxx")
+st.title("Dtabase explorer")
 
 
 # Másolat a DataFrame-ből, amit szűrni fogunk
@@ -70,7 +70,7 @@ if filtered_df.empty:
     st.write("No results found.")
 else:
     # Leírás és táblázat megjelenítése
-    st.markdown("## 📊 Explore the raw dataset in detail")
+    st.markdown("##Explore the raw dataset in detail")
     st.markdown("Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
     
     st.markdown("---")  # Optional: visual separator

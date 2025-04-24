@@ -111,3 +111,13 @@ else:
         font=dict(color="#262626")  # Dark font color
     )
     st.plotly_chart(movement_fig, use_container_width=True) 
+
+
+
+st.markdown("##Visualize your data insights through interactive charts")
+st.markdown("Explore trends, correlations, and patterns with dynamic graphs to make data analysis easier and more intuitive.")
+
+st.markdown("---")  # Optional: visual separator
+
+st.dataframe(filtered_df)
+
