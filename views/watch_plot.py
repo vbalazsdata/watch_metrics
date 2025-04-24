@@ -75,7 +75,7 @@ if filtered_df.empty:
     st.write("No results found.")
 else:
 
-# Create two columns for side-by-side layout
+    # Top row: two pie charts
     col1, col2 = st.columns(2)
 
     with col1:
@@ -97,7 +97,6 @@ else:
             paper_bgcolor="#ffffff",
             font=dict(color="#262626")
         )
-
         st.plotly_chart(marca_fig, use_container_width=True)
 
     with col2:
@@ -119,39 +118,34 @@ else:
             paper_bgcolor="#ffffff",
             font=dict(color="#262626")
         )
-
         st.plotly_chart(movement_fig, use_container_width=True)
 
+    # Bottom row: bar chart across full width
+    col3 = st.container()
 
+    with col3:
+        st.write("### 📊 Distribution by Date")
+        filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
+        date_counts = filtered_df["date"].dt.date.value_counts().sort_index()
 
-    # Distribution by Date (bar chart with exact date ticks)
-    st.write("### 📊 Distribution by Date")
+        date_fig = go.Figure([go.Bar(
+            x=date_counts.index.astype(str),
+            y=date_counts.values,
+            marker_color='#262626'
+        )])
+        date_fig.update_layout(
+            xaxis_title="Date",
+            yaxis_title="Number of Advertisements",
+            height=400,
+            margin=dict(l=20, r=20, t=40, b=60),
+            xaxis_tickangle=-45,
+            plot_bgcolor="#ffffff",
+            paper_bgcolor="#ffffff",
+            font=dict(color="#262626"),
+            xaxis=dict(type='category')
+        )
+        st.plotly_chart(date_fig, use_container_width=True)
 
-    # Ensure 'date' is in datetime format
-    filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
-
-    # Count and sort by actual date
-    date_counts = filtered_df["date"].dt.date.value_counts().sort_index()
-
-    # Bar chart
-    date_fig = go.Figure([go.Bar(
-        x=date_counts.index.astype(str),  # Convert to string for cleaner x-axis
-        y=date_counts.values,
-        marker_color='#262626'
-    )])
-    date_fig.update_layout(
-        xaxis_title="Date",
-        yaxis_title="Number of Advertisements",
-        height=400,  # Match height with the pie charts
-        margin=dict(l=20, r=20, t=40, b=60),
-        xaxis_tickangle=-45,
-        plot_bgcolor="#ffffff",
-        paper_bgcolor="#ffffff",
-        font=dict(color="#262626"),
-        xaxis=dict(type='category')
-    )
-
-    st.plotly_chart(date_fig, use_container_width=True)
 
 
 
