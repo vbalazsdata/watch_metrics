@@ -74,27 +74,28 @@ if selected_location != "All values":
 if filtered_df.empty:
     st.write("No results found.")
 else:
-    # Márka bar chart with Plotly
-    st.write("### 📊 Distribution of Brands")
+    # Márka pie chart with Plotly
+    st.write("### 🥧 Distribution of Brands")
     marca_counts = filtered_df['Brand'].value_counts()
-    
-    marca_fig = go.Figure([go.Bar(
-        x=marca_counts.index,
-        y=marca_counts.values,
-        marker_color='#262626'  # Dark gray color
+
+    marca_fig = go.Figure(data=[go.Pie(
+        labels=marca_counts.index,
+        values=marca_counts.values,
+        hole=0.4,  # Set to 0 for full pie, or 0.4 for donut style
+        marker=dict(colors=['#636EFA', '#EF553B', '#00CC96', '#AB63FA', '#FFA15A', '#19D3F3', '#FF6692', '#B6E880']),
+        textinfo='label+percent',
+        insidetextorientation='radial'
     )])
     marca_fig.update_layout(
-        #title="Number of advertisements by Brand",
-        xaxis_title="Brand",
-        yaxis_title="Number of Advertisements",
-        height=300,  # Smaller height for a more compact plot
-        margin=dict(l=20, r=20, t=40, b=60),  # Adjust margins
-        xaxis_tickangle=-45,  # Rotate x-axis labels for readability
-        plot_bgcolor="#ffffff",  # Light background
-        paper_bgcolor="#ffffff",  # White paper background
-        font=dict(color="#262626")  # Dark font color
+        height=400,
+        margin=dict(l=20, r=20, t=40, b=20),
+        showlegend=True,
+        paper_bgcolor="#ffffff",
+        font=dict(color="#262626")
     )
+
     st.plotly_chart(marca_fig, use_container_width=True)
+
 
     # Működése bar chart with Plotly
     st.write("### 📊 Distribution by Movement")
