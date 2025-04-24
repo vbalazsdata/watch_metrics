@@ -8,8 +8,6 @@ df = get_data()
 # Másolat a DataFrame-ből, amit szűrni fogunk
 filtered_df = df.copy()
 
-# Szűrők beállítása - Sidebar háttérszín
-
 
 st.sidebar.header("🔍 Filters")
 
@@ -67,9 +65,12 @@ if selected_location != "All values":
 if filtered_df.empty:
     st.write("No results found.")
 else:
-    # Rövid leírás megjelenítése
-    st.markdown("### Explore the raw dataset in detail.\nUse filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
+    # Leírás és táblázat megjelenítése
+    st.markdown("## 📊 Explore the raw dataset in detail")
+    st.markdown("Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
     
-    # Szűrt táblázat megjelenítése
+    st.markdown("---")  # Optional: visual separator
+    
     st.dataframe(filtered_df)
+
 
