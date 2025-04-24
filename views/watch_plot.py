@@ -3,29 +3,25 @@ import streamlit as st
 import plotly.graph_objects as go
 from utils import get_data
 
-
-
-
-# Adatok betöltése
+# Loading data
 df = get_data()
 
-# Oldalcím
+# Page title
 st.title("Metrics Overview")
 
 st.markdown("## Visualize your data insights through interactive charts")
 st.markdown("Explore trends, correlations, and patterns with dynamic graphs to make data analysis easier and more intuitive.")
 
-# Másolat a DataFrame-ből, amit szűrni fogunk
+# Creating a copy of the DataFrame for filtering
 filtered_df = df.copy()
 
 st.sidebar.header("🔍 Filters")
 
 def sort_values_with_nan(values):
-    """Segédfüggvény a NaN értékek kezelésére és a rendezésre"""
     sorted_values = sorted([v for v in values if pd.notna(v)]) + [v for v in values if pd.isna(v)]
     return sorted_values
 
-# Márka szűrő (dropdown)
+# Brnand filter (dropdown)
 brands = df["Brand"].unique().tolist()
 brands = sort_values_with_nan(brands)
 brands.insert(0, "All values")
@@ -34,7 +30,7 @@ selected_brand = st.sidebar.selectbox("", options=brands)
 if selected_brand != "All values":
     filtered_df = filtered_df[filtered_df["Brand"] == selected_brand]
 
-# Modell szűrő (dropdown)
+# Model filter (dropdown)
 models = filtered_df["Model"].unique().tolist()
 models = sort_values_with_nan(models)
 models.insert(0, "All values")
@@ -43,7 +39,7 @@ selected_model = st.sidebar.selectbox("", options=models)
 if selected_model != "All values":
     filtered_df = filtered_df[filtered_df["Model"] == selected_model]
 
-# Működés szűrő (dropdown)
+# Movement filter (dropdown)
 movements = filtered_df["Movement"].unique().tolist()
 movements = sort_values_with_nan(movements)
 movements.insert(0, "All values")
@@ -52,7 +48,7 @@ selected_movement = st.sidebar.selectbox("", options=movements)
 if selected_movement != "All values":
     filtered_df = filtered_df[filtered_df["Movement"] == selected_movement]
 
-# Gyártási év szűrő (dropdown)
+# Production year filter (dropdown)
 if "Year of production" in filtered_df.columns and not filtered_df["Year of production"].isna().all():
     years = sort_values_with_nan(sorted(filtered_df["Year of production"].dropna().unique().tolist()))
     years.insert(0, "All values")
@@ -61,7 +57,7 @@ if "Year of production" in filtered_df.columns and not filtered_df["Year of prod
     if selected_year != "All values":
         filtered_df = filtered_df[filtered_df["Year of production"] == selected_year]
 
-# Fellelhetőség szűrő (dropdown)
+# Location filter (dropdown)
 locations = filtered_df["Location"].unique().tolist()
 locations = sort_values_with_nan(locations)
 locations.insert(0, "All values")
@@ -70,19 +66,18 @@ selected_location = st.sidebar.selectbox("", options=locations)
 if selected_location != "All values":
     filtered_df = filtered_df[filtered_df["Location"] == selected_location]
 
-# Ellenőrizzük, hogy van-e adat a szűrés után
+# Check if the filtered DataFrame is empty
 if filtered_df.empty:
     st.write("No results found.")
 else:
-
     # Top row: two pie charts
     col1, col2 = st.columns(2)
 
     with col1:
         st.write("### 🥧 Distribution of Brands")
-        marca_counts = filtered_df['Brand'].value_counts()
+        brand_counts = filtered_df['Brand'].value_counts()
 
-        marca_fig = go.Figure(data=[go.Pie(
+        brand_fig = go.Figure(data=[go.Pie(
             labels=marca_counts.index,
             values=marca_counts.values,
             hole=0.4,
@@ -90,17 +85,17 @@ else:
             textinfo='label+percent',
             insidetextorientation='radial'
         )])
-        marca_fig.update_layout(
+        brand_fig.update_layout(
             height=400,
             margin=dict(l=20, r=20, t=40, b=20),
             showlegend=True,
             paper_bgcolor="#ffffff",
             font=dict(color="#262626")
         )
-        st.plotly_chart(marca_fig, use_container_width=True)
+        st.plotly_chart(brand_fig, use_container_width=True)
 
     with col2:
-        st.write("### 🥧 Distribution by Movement")
+        st.write("### 🥧 Distribution by Movement types")
         movement_counts = filtered_df['Movement'].value_counts()
 
         movement_fig = go.Figure(data=[go.Pie(
@@ -152,7 +147,7 @@ else:
     with col4:
         st.write("### 💬 Ask about the data")
         
-        # Display a chat box and respond
+        # Display a fake chat box and respond
         user_input = st.chat_input("Ask me a question about the data...")
         if user_input:
             # Dummy response for now; you can replace this with actual logic

@@ -17,7 +17,6 @@ intro_page = st.Page(
     
 )
 
-
 # --- STOCK ---
 watch_data = st.Page(
     "views/watch_data.py",
@@ -30,7 +29,6 @@ watch_plot = st.Page(
     title="Insights",
     icon=":material/bar_chart:",
 )
-
 
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
