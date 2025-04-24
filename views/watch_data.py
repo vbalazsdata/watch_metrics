@@ -6,39 +6,12 @@ from utils import get_data
 df = get_data()
 
 # Oldalcím
-#st.title("⏱️ Watch Metrics")
+st.title("Metrics Overview")
+
 
 # Másolat a DataFrame-ből, amit szűrni fogunk
 filtered_df = df.copy()
 
-# Szűrők beállítása - Sidebar háttérszín
-st.markdown(
-    """
-    <style>
-        [data-testid="stSidebar"] {
-            background-color: #ADD8E6;
-        }
-        /* Style the selectbox to have a mid-blue background and white text */
-        .css-1wa3eu0, .css-1wa3eu0:hover, .css-1wa3eu0:focus {
-            background-color: #4682B4; /* Mid blue background */
-            color: white; /* White text */
-        }
-        /* Ensuring the input text inside the selectbox is white */
-        .css-1wa3eu0 input {
-            color: white;
-        }
-        /* Customizing the dropdown arrow color */
-        .css-1wa3eu0 .css-1e9m5g5 {
-            color: white;
-        }
-        /* Adjust the hover state for the dropdown options */
-        .css-1wa3eu0 .css-1v0mbdj:hover {
-            background-color: #5A9BD5; /* Slightly lighter blue on hover */
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 st.sidebar.header("🔍 Filters")
 
@@ -96,6 +69,12 @@ if selected_location != "All values":
 if filtered_df.empty:
     st.write("No results found.")
 else:
-    # Szűrt táblázat megjelenítése
-    #st.write("📊 Showing the filtered table:")
+    # Leírás és táblázat megjelenítése
+    st.markdown("## 📊 Explore the raw dataset in detail")
+    st.markdown("Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
+    
+    st.markdown("---")  # Optional: visual separator
+    
     st.dataframe(filtered_df)
+
+
