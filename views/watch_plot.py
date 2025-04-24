@@ -119,5 +119,25 @@ else:
     st.plotly_chart(movement_fig, use_container_width=True) 
 
 
-
+    # Időszak bar chart with Plotly
+    st.write("### 📊 Distribution by Date")
+    movement_counts = filtered_df['Date'].value_counts()
+    
+    movement_fig = go.Figure([go.Bar(
+        x=movement_counts.index,
+        y=movement_counts.values,
+        marker_color='#262626'  # Dark gray color
+    )])
+    movement_fig.update_layout(
+        #title="Number of advertisements by Movement",
+        xaxis_title="Date",
+        yaxis_title="Number of Advertisements",
+        height=300,  # Smaller height for a more compact plot
+        margin=dict(l=20, r=20, t=40, b=60),  # Adjust margins
+        xaxis_tickangle=-45,  # Rotate x-axis labels for readability
+        plot_bgcolor="#ffffff",  # Light background
+        paper_bgcolor="#ffffff",  # White paper background
+        font=dict(color="#262626")  # Dark font color
+    )
+    st.plotly_chart(movement_fig, use_container_width=True) 
 
