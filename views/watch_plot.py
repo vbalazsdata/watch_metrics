@@ -21,7 +21,7 @@ def sort_values_with_nan(values):
     sorted_values = sorted([v for v in values if pd.notna(v)]) + [v for v in values if pd.isna(v)]
     return sorted_values
 
-# Brnand filter (dropdown)
+# Brand filter (dropdown)
 brands = df["Brand"].unique().tolist()
 brands = sort_values_with_nan(brands)
 brands.insert(0, "All values")
@@ -78,8 +78,8 @@ else:
         brand_counts = filtered_df['Brand'].value_counts()
 
         brand_fig = go.Figure(data=[go.Pie(
-            labels=marca_counts.index,
-            values=marca_counts.values,
+            labels=brand_counts.index,
+            values=brand_counts.values,
             hole=0.4,
             marker=dict(colors=['#636EFA', '#EF553B', '#00CC96', '#AB63FA', '#FFA15A', '#19D3F3', '#FF6692', '#B6E880']),
             textinfo='label+percent',
