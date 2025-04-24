@@ -69,9 +69,8 @@ else:
     # Description of the page
     st.markdown("## Explore the raw dataset in detail")
     st.markdown("### Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
-    st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down yuour search as much as possible! ***")
-    
-    st.markdown("---")  # Optional: visual separator
+    st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down yuour search as much as possible! ***")    
+    st.markdown("---")
     
     st.dataframe(filtered_df.head(100))
 

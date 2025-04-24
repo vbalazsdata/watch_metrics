@@ -11,6 +11,7 @@ st.title("Metrics Overview")
 
 st.markdown("## Visualize your data insights through interactive charts")
 st.markdown("Explore trends, correlations, and patterns with dynamic graphs to make data analysis easier and more intuitive.")
+st.markdown("---")
 
 # Creating a copy of the DataFrame for filtering
 filtered_df = df.copy()
@@ -155,6 +156,8 @@ else:
             # Here you could add logic like keyword-based answers or use LangChain/OpenAI if external integration is possible
             st.write("🔍 (Pretending to analyze data...)")
             st.write("📈 I'm just a placeholder! But in a real app, I could tell you insights from your data.")
+
+            
 
 
 
