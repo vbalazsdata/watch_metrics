@@ -121,7 +121,7 @@ else:
 
     # Időszak bar chart with Plotly
     st.write("### 📊 Distribution by Date")
-    movement_counts = filtered_df['Date'].value_counts()
+    movement_counts = filtered_df['date'].value_counts()
     
     movement_fig = go.Figure([go.Bar(
         x=movement_counts.index,
