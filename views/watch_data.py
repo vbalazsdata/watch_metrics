@@ -72,21 +72,9 @@ else:
     # Leírás és táblázat megjelenítése
     st.markdown("## Explore the raw dataset in detail")
     st.markdown("Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
-
+    
     st.markdown("---")  # Optional: visual separator
-
-    # Styling the DataFrame before rendering
-    styled_df = filtered_df.style.set_table_styles(
-        [{
-            'selector': 'thead th',  # Target the table header
-            'props': [('background-color', '#4CAF50'),  # Green background color
-                    ('color', 'white'),  # White text color
-                    ('font-weight', 'bold')]  # Bold header text
-        }]
-    )
-
-    # Display the styled dataframe
-    st.dataframe(styled_df)
-
+    
+    st.dataframe(filtered_df)
 
 
