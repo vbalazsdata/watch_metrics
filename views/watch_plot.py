@@ -124,25 +124,33 @@ else:
 
 
 
-        # Időszak bar chart with Plotly
-        st.write("### 📊 Distribution by Date")
-        movement_counts = filtered_df['date'].value_counts()
-        
-        movement_fig = go.Figure([go.Bar(
-            x=movement_counts.index,
-            y=movement_counts.values,
-            marker_color='#262626'  # Dark gray color
-        )])
-        movement_fig.update_layout(
-            #title="Number of advertisements by Movement",
-            xaxis_title="Date",
-            yaxis_title="Number of Advertisements",
-            height=300,  # Smaller height for a more compact plot
-            margin=dict(l=20, r=20, t=40, b=60),  # Adjust margins
-            xaxis_tickangle=-45,  # Rotate x-axis labels for readability
-            plot_bgcolor="#ffffff",  # Light background
-            paper_bgcolor="#ffffff",  # White paper background
-            font=dict(color="#262626")  # Dark font color
-        )
-        st.plotly_chart(movement_fig, use_container_width=True) 
+    # Distribution by Date (bar chart with exact date ticks)
+    st.write("### 📊 Distribution by Date")
+
+    # Ensure 'date' is in datetime format
+    filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
+
+    # Count and sort by actual date
+    date_counts = filtered_df["date"].dt.date.value_counts().sort_index()
+
+    # Bar chart
+    date_fig = go.Figure([go.Bar(
+        x=date_counts.index.astype(str),  # Convert to string for cleaner x-axis
+        y=date_counts.values,
+        marker_color='#262626'
+    )])
+    date_fig.update_layout(
+        xaxis_title="Date",
+        yaxis_title="Number of Advertisements",
+        height=300,
+        margin=dict(l=20, r=20, t=40, b=60),
+        xaxis_tickangle=-45,
+        plot_bgcolor="#ffffff",
+        paper_bgcolor="#ffffff",
+        font=dict(color="#262626"),
+        xaxis=dict(type='category')  # Treat x-axis as categories, not continuous range
+    )
+
+    st.plotly_chart(date_fig, use_container_width=True)
+
 
