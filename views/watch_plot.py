@@ -142,15 +142,16 @@ else:
     date_fig.update_layout(
         xaxis_title="Date",
         yaxis_title="Number of Advertisements",
-        height=300,
+        height=400,  # Match height with the pie charts
         margin=dict(l=20, r=20, t=40, b=60),
         xaxis_tickangle=-45,
         plot_bgcolor="#ffffff",
         paper_bgcolor="#ffffff",
         font=dict(color="#262626"),
-        xaxis=dict(type='category')  # Treat x-axis as categories, not continuous range
+        xaxis=dict(type='category')
     )
 
     st.plotly_chart(date_fig, use_container_width=True)
+
 
 
