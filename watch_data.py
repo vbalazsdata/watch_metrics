@@ -2,14 +2,12 @@ import pandas as pd
 import streamlit as st
 from utils import get_data
 
+# Adatok betöltése
+df = get_data()
 
 # Oldalcím
 st.title("Metrics Overview")
-st.markdown("## 📊 Explore the raw dataset in detail")
-st.markdown("Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
 
-# Adatok betöltése
-df = get_data()
 
 # Másolat a DataFrame-ből, amit szűrni fogunk
 filtered_df = df.copy()
