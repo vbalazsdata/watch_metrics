@@ -5,8 +5,17 @@ from utils import get_data
 # Loading data
 df = get_data()
 
-#Latest update date
+# Calculating dates
 latest_update = df['date'].max()
+second_latest_update = df['date'][df['date'] < latest_update].max()
+
+# Calculating number of ads
+num_latest = df[df['date'] == latest_update].shape[0]
+num_second_latest = df[df['date'] == second_latest_update].shape[0]
+
+# Calculate the nominal difference and percentage difference
+nominal_diff = num_latest - num_second_latest
+percentage_diff = (nominal_diff / num_second_latest * 100) if num_second_latest != 0 else 0
 
 # Page title
 st.title("Data explorer")
@@ -75,7 +84,37 @@ else:
     st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down yuour search as much as possible! ***")    
     st.markdown("---")
     
-    st.markdown(f"### Latest Update: 🔄 {latest_update}")
+    # Format the results in markdown with HTML and CSS
+    st.markdown("### Latest Update")
+    st.markdown(
+        f"""
+        <div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; text-align: center;">
+            <h3>Latest Update: 🔄 {latest_date.strftime('%Y-%m-%d %H:%M:%S')}</h3>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+
+    # Create a grid with 3 smaller tiles below the latest update
+    st.markdown(
+        f"""
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <div style="background-color: #e0f7fa; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
+                <h4>Number of Records for Latest Date</h4>
+                <p>{num_latest}</p>
+            </div>
+            <div style="background-color: #ffe0b2; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
+                <h4>Nominal Difference</h4>
+                <p>{nominal_diff}</p>
+            </div>
+            <div style="background-color: #c8e6c9; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
+                <h4>Percentage Difference</h4>
+                <p>{percentage_diff:.2f}%</p>
+            </div>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
 
     st.markdown("---")
 
