@@ -41,7 +41,7 @@ pg = st.navigation(
 # --- LOGO ---
 st.logo(
     'https://i.ibb.co/jP4Bcszy/Screenshot-2025-04-25-214623.png',
-    size="large")
+    size="small")
 
 # --- RUN NAVIGATION ---
 pg.run()
