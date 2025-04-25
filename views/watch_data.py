@@ -89,7 +89,7 @@ else:
     st.markdown(
         f"""
         <div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; text-align: center;">
-            <h3>Latest Update: 🔄 {latest_update.strftime('%Y-%m-%d %H:%M:%S')}</h3>
+            <h3>Latest Update: 🔄 {latest_update}</h3>
         </div>
         """, 
         unsafe_allow_html=True
