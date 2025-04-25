@@ -5,7 +5,7 @@ st.set_page_config( layout="wide", page_title="Watch Metrics",page_icon="📊")
 # --- INFO ---
 about_page = st.Page(
     "views/about.py",
-    title="About this app",
+    title="About this appyyyyy",
     icon=":material/account_circle:",
     default=True,
 )
