@@ -40,7 +40,7 @@ pg = st.navigation(
 
 # --- LOGO ---
 st.logo(
-    'https://i.ibb.co/7Jr3L470/Screenshot-2025-04-25-214623.jpg',
+    'https://i.ibb.co/jP4Bcszy/Screenshot-2025-04-25-214623.png',
     size="large")
 
 # --- RUN NAVIGATION ---
