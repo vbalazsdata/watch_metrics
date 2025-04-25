@@ -58,7 +58,67 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("---")
+# Sidebar filters
+st.sidebar.header("🔍 Filters")
+
+def sort_values_with_nan(values):
+    sorted_values = sorted([v for v in values if pd.notna(v)]) + [v for v in values if pd.isna(v)]
+    return sorted_values
+
+# Brand filter (dropdown)
+brands = df["Brand"].unique().tolist()
+brands = sort_values_with_nan(brands)
+brands.insert(0, "All values")
+st.sidebar.markdown("**Brand**")
+selected_brand = st.sidebar.selectbox("", options=brands)
+if selected_brand != "All values":
+    df = df[df["Brand"] == selected_brand]
+
+# Model filter (dropdown)
+models = df["Model"].unique().tolist()
+models = sort_values_with_nan(models)
+models.insert(0, "All values")
+st.sidebar.markdown("**Model**")
+selected_model = st.sidebar.selectbox("", options=models)
+if selected_model != "All values":
+    df = df[df["Model"] == selected_model]
+
+# Movement filter (dropdown)
+movements = df["Caliber/movement"].unique().tolist()
+movements = sort_values_with_nan(movements)
+movements.insert(0, "All values")
+st.sidebar.markdown("**Caliber/movement**")
+selected_movement = st.sidebar.selectbox("", options=movements)
+if selected_movement != "All values":
+    df = df[df["Caliber/movement"] == selected_movement]
+
+# Production year filter (dropdown)
+if "Year of production" in df.columns and not df["Year of production"].isna().all():
+    years = sort_values_with_nan(sorted(df["Year of production"].dropna().unique().tolist()))
+    years.insert(0, "All values")
+    st.sidebar.markdown("**Year of production**")
+    selected_year = st.sidebar.selectbox("", options=years)
+    if selected_year != "All values":
+        df = df[df["Year of production"] == selected_year]
+
+# Location filter (dropdown)
+locations = df["Location"].unique().tolist()
+locations = sort_values_with_nan(locations)
+locations.insert(0, "All values")
+st.sidebar.markdown("**Location**")
+selected_location = st.sidebar.selectbox("", options=locations)
+if selected_location != "All values":
+    df = df[df["Location"] == selected_location]
+
+# Date filter (dropdown)
+dates = sorted(df['date'].unique())
+dates.insert(0, "All values")
+st.sidebar.markdown("**Date**")
+selected_date = st.sidebar.selectbox("Select a date", options=dates)
+if selected_date != "All values":
+    df = df[df["date"] == selected_date]
+
+st.sidebar.markdown("---")
 
 # Create the layout grid for charts and dummy text
 col1, col2, col3, col4 = st.columns(4)
@@ -141,4 +201,3 @@ with col7:
         # Here you could add logic like keyword-based answers or use LangChain/OpenAI if external integration is possible
         st.write("🔍 (Pretending to analyze data...)")
         st.write("📈 I'm just a placeholder! But in a real app, I could tell you insights from your data.")
-

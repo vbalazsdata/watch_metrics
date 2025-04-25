@@ -74,14 +74,21 @@ selected_location = st.sidebar.selectbox("", options=locations)
 if selected_location != "All values":
     filtered_df = filtered_df[filtered_df["Location"] == selected_location]
 
+# **New Date filter** (dropdown for specific date)
+dates = sorted(filtered_df['date'].unique())
+dates.insert(0, "All values")
+st.sidebar.markdown("**Date**")
+selected_date = st.sidebar.selectbox("Select a date", options=dates)
+if selected_date != "All values":
+    filtered_df = filtered_df[filtered_df["date"] == selected_date]
+
 # Check if there are any data after filtering
 if filtered_df.empty:
     st.write("No results found.")
 else:
     # Description of the page
-    #st.markdown("## Explore the raw dataset in details")
     st.markdown("### Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
-    st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down yuour search as much as possible! ***")    
+    st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down your search as much as possible! ***")    
     st.markdown("---")
     
     # Format the results in markdown with HTML and CSS
@@ -118,5 +125,3 @@ else:
     st.markdown("---")
 
     st.dataframe(filtered_df.head(100))
-
-
