@@ -77,6 +77,8 @@ else:
     
     st.markdown(f"### Latest Update: 🔄 {latest_update}")
 
+    st.markdown("---")
+
     st.dataframe(filtered_df.head(100))
 
 
