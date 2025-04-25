@@ -39,7 +39,9 @@ pg = st.navigation(
 )
 
 # --- LOGO ---
-st.logo("logo.png")
+st.logo(
+    'https://i.ibb.co/fd47vzPJ/logo.png',
+    size="large")
 
 # --- RUN NAVIGATION ---
 pg.run()
