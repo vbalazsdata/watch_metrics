@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 from utils import get_data
-import time
 
 # Loading data
 df = get_data()
@@ -76,7 +75,7 @@ else:
     st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down yuour search as much as possible! ***")    
     st.markdown("---")
     
-    st.markdown(f"### Latest Update: 🔄 {latest_update.strftime('%Y-%m-%d %H:%M:%S')}")
+    st.markdown(f"### Latest Update: 🔄 {latest_update}")
 
     st.dataframe(filtered_df.head(100))
 
