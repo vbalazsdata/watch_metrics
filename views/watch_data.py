@@ -85,7 +85,6 @@ else:
     st.markdown("---")
     
     # Format the results in markdown with HTML and CSS
-    st.markdown("### Latest Update")
     st.markdown(
         f"""
         <div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; text-align: center;">
@@ -100,16 +99,16 @@ else:
         f"""
         <div style="display: flex; justify-content: space-between; margin-top: 20px;">
             <div style="background-color: #e0f7fa; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
-                <h4>Number of Records for Latest Date</h4>
-                <p>{num_latest}</p>
+                <h4>{num_latest}</h4>
+                <p>Ads in the latest dataset that matches your preferences</p>
             </div>
             <div style="background-color: #ffe0b2; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
-                <h4>Nominal Difference</h4>
-                <p>{nominal_diff}</p>
+                <h4>+ {nominal_diff}<</h4>
+                <p>Ads since the previous update</p>
             </div>
             <div style="background-color: #c8e6c9; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
-                <h4>Percentage Difference</h4>
-                <p>{percentage_diff:.2f}%</p>
+                <h4>{percentage_diff:.2f}%</h4>
+                <p>Market growth (in number of ads)</p>
             </div>
         </div>
         """, 
