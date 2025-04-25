@@ -39,7 +39,7 @@ pg = st.navigation(
 )
 
 # --- LOGO ---
-st.image("logo.png",size="large")
+st.image("logo.png")
 
 # --- RUN NAVIGATION ---
 pg.run()
