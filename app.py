@@ -40,6 +40,8 @@ pg = st.navigation(
 
 # --- LOGO ---
 st.logo('https://i.ibb.co/h1450S6Y/logo.png', size="Large")
+st.text("Created by")
+st.markdown("**[@voros_balazs](https://www.linkedin.com/in/vörös-balázs-4906531ba/)**")
 
 # --- RUN NAVIGATION ---
 pg.run()
