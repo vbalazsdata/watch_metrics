@@ -88,7 +88,7 @@ else:
     st.markdown(
         f"""
         <div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; text-align: center;">
-            <h3>Latest Update: 🔄 {latest_update}</h3>
+            <h3>🔄 Latest Update: {latest_update}</h3>
         </div>
         """, 
         unsafe_allow_html=True
@@ -98,15 +98,15 @@ else:
     st.markdown(
         f"""
         <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-            <div style="background-color: #e0f7fa; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
+            <div style="background-color: #1b263b; color: #ffffff; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
                 <h4>{num_latest}</h4>
-                <p>Ads in the latest dataset that matches your preferences</p>
+                <p>Ads in the latest dataset that match your preferences</p>
             </div>
-            <div style="background-color: #ffe0b2; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
-                <h4>+ {nominal_diff}<</h4>
+            <div style="background-color: #1b263b; color: #ffffff; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
+                <h4>{nominal_diff}</h4>
                 <p>Ads since the previous update</p>
             </div>
-            <div style="background-color: #c8e6c9; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
+            <div style="background-color: #1b263b; color: #ffffff; padding: 15px; border-radius: 10px; width: 30%; text-align: center;">
                 <h4>{percentage_diff:.2f}%</h4>
                 <p>Market growth (in number of ads)</p>
             </div>
