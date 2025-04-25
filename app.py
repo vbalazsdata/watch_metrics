@@ -41,9 +41,8 @@ pg = st.navigation(
 # --- LOGO ---
 st.logo('logo.png', size="Large")
 
-
-st.sidebar.text("Created by")
-st.sidebar.markdown("**[@voros_balazs](https://www.linkedin.com/in/vörös-balázs-4906531ba/)**")
+# --- Created by ---
+st.sidebar.markdown("Created by **[@voros_balazs](https://www.linkedin.com/in/vörös-balázs-4906531ba/)**")
 
 # --- RUN NAVIGATION ---
 pg.run()

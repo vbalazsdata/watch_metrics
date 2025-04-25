@@ -5,6 +5,9 @@ from utils import get_data
 # Loading data
 df = get_data()
 
+#Latest update date
+latest_update = df['date'].max()
+
 # Page title
 st.title("Data explorer")
 
@@ -67,11 +70,13 @@ if filtered_df.empty:
     st.write("No results found.")
 else:
     # Description of the page
-    st.markdown("## Explore the raw dataset in detail")
+    #st.markdown("## Explore the raw dataset in details")
     st.markdown("### Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
     st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down yuour search as much as possible! ***")    
     st.markdown("---")
     
+    st.markdown(f"### Latest Update: 🔄 {latest_update.strftime('%Y-%m-%d %H:%M:%S')}")
+
     st.dataframe(filtered_df.head(100))
 
 
