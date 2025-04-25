@@ -1,11 +1,11 @@
 import streamlit as st
 
-st.set_page_config( layout="wide", page_title="Watch Metrics",page_icon="📊")
+st.set_page_config( layout="wide", page_title="Watch Metricsx",page_icon="📊")
 
 # --- INFO ---
 about_page = st.Page(
     "views/about.py",
-    title="About this appyyyyy",
+    title="About this app",
     icon=":material/account_circle:",
     default=True,
 )
