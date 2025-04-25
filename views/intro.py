@@ -9,7 +9,7 @@ def intro():
     st.markdown(
         """
          
-        This project was born out of my passion for **data analysis** and **watch collecting**.  
+        xxxxxxThis project was born out of my passion for **data analysis** and **watch collecting**.  
         The goal is to help me **analyze and foresee market trends** 🔎, while also making it easier to  
         **rationalize and reorganize my watch collection** whenever I feel like it.  
 
