@@ -65,7 +65,7 @@ col1, col2, col3, col4 = st.columns(4)
 
 # First row: Treemap of Brands, dummy text, Treemap of Movement types, dummy text
 with col1:
-    st.write("### 🟢 Distribution of Brands (Treemap)")
+    st.write("### Distribution of Brands")
     # Calculate Brand Distribution
     brand_counts = df['Brand'].value_counts().reset_index()
     brand_counts.columns = ['Brand', 'Count']  # Rename columns for clarity
@@ -83,7 +83,7 @@ with col2:
     st.write("Some dummy text here. Explain the data or provide insights about the charts above.")
 
 with col3:
-    st.write("### 🟠 Distribution of Movement Types (Treemap)")
+    st.write("### Distribution of Movement Types")
     # Calculate Movement Distribution
     movement_counts = df['Movement'].value_counts().reset_index()
     movement_counts.columns = ['Movement', 'Count']  # Rename columns for clarity
@@ -115,7 +115,7 @@ with col5:
         marker_color='#262626'
     )])
     date_fig.update_layout(
-        xaxis_title="Date",
+        #xaxis_title="",
         yaxis_title="Number of Advertisements",
         height=400,
         margin=dict(l=20, r=20, t=40, b=60),
