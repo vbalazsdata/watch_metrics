@@ -87,7 +87,7 @@ else:
     # Format the results in markdown with HTML and CSS
     st.markdown(
         f"""
-        <div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; text-align: center;">
+        <div style="background-color: #778da9; padding: 20px; border-radius: 10px; text-align: center;">
             <h3>🔄 Latest Update: {latest_update}</h3>
         </div>
         """, 
