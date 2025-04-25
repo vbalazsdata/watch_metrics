@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from utils import get_data
+import time
 
 # Loading data
 df = get_data()
