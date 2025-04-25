@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config( layout="wide", page_title="Watch Metrics",page_icon="📊")
 
-# --- INTRO ---
+# --- INFO ---
 about_page = st.Page(
     "views/about.py",
     title="About this app",
@@ -17,7 +17,7 @@ intro_page = st.Page(
     
 )
 
-# --- STOCK ---
+# --- ANALYSIS ---
 watch_data = st.Page(
     "views/watch_data.py",
     title="Data explorer",
@@ -38,9 +38,9 @@ pg = st.navigation(
     }
 )
 
-# --- SHARED ON ALL PAGES ---
+# --- LOGO ---
 st.logo(
-    'https://i.ibb.co/fd47vzPJ/logo.png',
+    'https://ibb.co/bgN4DJpG',
     size="large")
 
 # --- RUN NAVIGATION ---
