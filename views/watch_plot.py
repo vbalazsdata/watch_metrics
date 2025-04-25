@@ -66,14 +66,17 @@ col1, col2, col3, col4 = st.columns(4)
 # First row: Treemap of Brands, dummy text, Treemap of Movement types, dummy text
 with col1:
     st.write("### 🟢 Distribution of Brands (Treemap)")
-    brand_counts = df['Brand'].value_counts()
-    brand_fig = px.treemap(
-        names=brand_counts.index,
-        values=brand_counts.values,
-        color=brand_counts.values,
-        hover_data=['label'],
-        title="Distribution of Brands"
-    )
+    # Calculate Brand Distribution
+    brand_counts = df['Brand'].value_counts().reset_index()
+    brand_counts.columns = ['Brand', 'Count']  # Rename columns for clarity
+
+    # Create Treemap for Brand Distribution
+    brand_fig = px.treemap(brand_counts, 
+                        path=['Brand'], 
+                        values='Count', 
+                        color='Count', 
+                        hover_data=['Brand'],
+                        title="Distribution of Brands")
     st.plotly_chart(brand_fig, use_container_width=True)
 
 with col2:
@@ -81,14 +84,17 @@ with col2:
 
 with col3:
     st.write("### 🟠 Distribution of Movement Types (Treemap)")
-    movement_counts = df['Movement'].value_counts()
-    movement_fig = px.treemap(
-        names=movement_counts.index,
-        values=movement_counts.values,
-        color=movement_counts.values,
-        hover_data=['label'],
-        title="Distribution of Movement Types"
-    )
+    # Calculate Movement Distribution
+    movement_counts = df['Movement'].value_counts().reset_index()
+    movement_counts.columns = ['Movement', 'Count']  # Rename columns for clarity
+
+    # Create Treemap for Movement Distribution
+    movement_fig = px.treemap(movement_counts, 
+                            path=['Movement'], 
+                            values='Count', 
+                            color='Count', 
+                            hover_data=['Movement'],
+                            title="Distribution of Movement Types")
     st.plotly_chart(movement_fig, use_container_width=True)
 
 with col4:
