@@ -39,9 +39,7 @@ pg = st.navigation(
 )
 
 # --- LOGO ---
-
-
-st.sidebar.image("logo.png", width=200)
+st.logo('logo.png')
 
 # --- RUN NAVIGATION ---
 pg.run()
