@@ -34,7 +34,7 @@ watch_plot = st.Page(
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Info": [about_page, intro_page],
+        "Info": [intro_page, about_page],
         "Analysis": [watch_data, watch_plot],
     }
 )
