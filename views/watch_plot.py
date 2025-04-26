@@ -184,17 +184,6 @@ with col3:
 # Second row: Bar chart for Date distribution, dummy text, Chatbox
 col4 = st.columns(1)
 
-
-
 with col4:
     st.write("Some dummy text here. This section can be used for providing additional insights or context about the bar chart above.")
 
-
-    # Display a chatbox for user input
-    user_input = st.chat_input("Ask me a question about the data...")
-    if user_input:
-        # Dummy response for now; you can replace this with actual logic
-        st.write(f"**You asked:** {user_input}")
-        # Here you could add logic like keyword-based answers or use LangChain/OpenAI if external integration is possible
-        st.write("🔍 (Pretending to analyze data...)")
-        st.write("📈 I'm just a placeholder! But in a real app, I could tell you insights from your data.")
