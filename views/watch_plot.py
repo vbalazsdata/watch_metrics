@@ -20,12 +20,13 @@ nominal_diff = num_latest - num_second_latest
 percentage_diff = (nominal_diff / num_second_latest * 100) if num_second_latest != 0 else 0
 
 # Page title
-st.title("Metrics Overview")
+st.title("Data Insights Dashboard")
 
 # Description of the page
-st.markdown("## Visualize your data insights through interactive charts")
-st.markdown("Explore trends, correlations, and patterns with dynamic graphs to make data analysis easier and more intuitive.")
-st.markdown("---") 
+st.markdown("## Discover Data Insights with interactive Charts!")
+st.markdown("Uncover trends, patterns, and connections effortlessly through dynamic, easy-to-use visualizations.")
+st.markdown("---")
+
 
 # Format the results in markdown with HTML and CSS for the latest update
 st.markdown(
@@ -137,8 +138,8 @@ with col1:
                         path=['Brand'], 
                         values='Count', 
                         color='Count', 
-                        hover_data=['Brand'],
-                        title="Distribution of Brands")
+                        hover_data=['Brand']
+                        )
     st.plotly_chart(brand_fig, use_container_width=True)
 
 with col2:
@@ -152,8 +153,8 @@ with col2:
                             path=['Movement'], 
                             values='Count', 
                             color='Count', 
-                            hover_data=['Movement'],
-                            title="Distribution of Movement Types")
+                            hover_data=['Movement']
+                            )
     st.plotly_chart(movement_fig, use_container_width=True)
 
 with col3:

@@ -87,7 +87,7 @@ if filtered_df.empty:
     st.write("No results found.")
 else:
     # Description of the page
-    st.markdown("### Use filters and sorting to dive into individual records, spot patterns, or verify specific entries.")
+    st.markdown("### Play around with filters and sorting to spot useful patterns or find exactly what you need.")
     st.markdown("*** You can always see 100 rows in this table due to performance reasons. Try to narrow down your search as much as possible! ***")    
     st.markdown("---")
     
