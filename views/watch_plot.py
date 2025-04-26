@@ -185,5 +185,31 @@ with col3:
 col4, = st.columns(1)
 
 with col4 :
-    st.write("Some dummy text here. This section can be used for providing additional insights or context about the bar chart above.")
+    # Find the most popular brand
+    top_brand = brand_counts.sort_values("Count", ascending=False).iloc[0]["Brand"]
+    
+    # Find the most preferred movement type
+    top_movement = movement_counts.sort_values("Count", ascending=False).iloc[0]["Movement"]
+
+    # Analyze trend based on the last 3 dates
+    last_three_dates = date_counts.tail(3)
+    if last_three_dates.is_monotonic_increasing:
+        trend = "upwards 📈"
+    elif last_three_dates.is_monotonic_decreasing:
+        trend = "downwards 📉"
+    else:
+        trend = "stable ➡️"
+    
+    # Write the summary
+    st.markdown(
+        f"""
+        <h2 style="text-align: center;">🔎 <b>Summary</b></h2>
+        <p style="font-size: 18px;">
+        It appears that the most popular brand is <b>{top_brand}</b>, while the most preferred movement type is <b>{top_movement}</b>.<br><br>
+        Observing the recent trend, the market shows a <b>{trend}</b> movement based on the latest activity.
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
 
