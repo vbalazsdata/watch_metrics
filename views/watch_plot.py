@@ -58,7 +58,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.sidebar.markdown("---")
+st.markdown("---") 
 
 # Sidebar filters
 st.sidebar.header("🔍 Filters")
