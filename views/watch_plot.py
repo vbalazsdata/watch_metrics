@@ -121,11 +121,11 @@ if selected_date != "All values":
 st.sidebar.markdown("---")
 
 # Create the layout grid for charts and dummy text
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3 = st.columns(3)
 
 # First row: Treemap of Brands, dummy text, Treemap of Movement types, dummy text
 with col1:
-    st.write("### Distribution of Brands")
+    st.write("### ⌚ Distribution of Brands")
     # Calculate Brand Distribution
     brand_counts = df['Brand'].value_counts().reset_index()
     brand_counts.columns = ['Brand', 'Count']  # Rename columns for clarity
@@ -140,10 +140,7 @@ with col1:
     st.plotly_chart(brand_fig, use_container_width=True)
 
 with col2:
-    st.write("Some dummy text here. Explain the data or provide insights about the charts above.")
-
-with col3:
-    st.write("### Distribution of Movement Types")
+    st.write("### ⚙️ Distribution of Movement Types")
     # Calculate Movement Distribution
     movement_counts = df['Movement'].value_counts().reset_index()
     movement_counts.columns = ['Movement', 'Count']  # Rename columns for clarity
@@ -157,13 +154,7 @@ with col3:
                             title="Distribution of Movement Types")
     st.plotly_chart(movement_fig, use_container_width=True)
 
-with col4:
-    st.write("Some dummy text here. Explain the data or provide insights about the charts above.")
-
-# Second row: Bar chart for Date distribution, dummy text, Chatbox
-col5, col6, col7 = st.columns(3)
-
-with col5:
+with col3:
     st.write("### 📊 Distribution by Date")
     filtered_df = df.copy()
     filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
@@ -185,14 +176,18 @@ with col5:
         #font=dict(color="#262626"),
         #xaxis=dict(type='category')
     )
-    st.plotly_chart(date_fig, use_container_width=True)
+    st.plotly_chart(date_fig, use_container_width=True)    
 
-with col6:
+
+# Second row: Bar chart for Date distribution, dummy text, Chatbox
+col4 = st.columns(1)
+
+
+
+with col4:
     st.write("Some dummy text here. This section can be used for providing additional insights or context about the bar chart above.")
 
-with col7:
-    st.write("### 💬 Ask about the data")
-    
+
     # Display a chatbox for user input
     user_input = st.chat_input("Ask me a question about the data...")
     if user_input:
