@@ -177,7 +177,7 @@ with col3:
         #plot_bgcolor="#ffffff",
         #paper_bgcolor="#ffffff",
         #font=dict(color="#262626"),
-        #xaxis=dict(type='category')
+        xaxis=dict(type='category')
     )
     st.plotly_chart(date_fig, use_container_width=True)    
 

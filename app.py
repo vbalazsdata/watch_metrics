@@ -8,13 +8,14 @@ intro_page = st.Page(
     "views/intro.py",
     title="Introduction",
     icon=":material/account_circle:",
+    default=True,
+
 )
 
 about_page = st.Page(
     "views/about.py",
     title="About this app",
     icon=":material/account_circle:",
-    default=True,
 )
 
 
