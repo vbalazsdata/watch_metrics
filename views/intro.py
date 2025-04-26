@@ -17,7 +17,7 @@ def intro():
         This is simply a tool for me to enhance my understanding of the market and optimize my collection.
         Also, I wanted to learn **Python** 🐍 and **Streamlit** 📊, so I decided to create this app as a final assignment for a Python course.
 
-        🚀 What’s Next?
+        🚀 **What’s Next?**
         This is just the beginning! As I continue learning Python and find more time, I'll keep expanding and improving this app.
 
         Stay tuned for more updates!

@@ -11,7 +11,7 @@ def about():
         ## Welcome to the **Watch Metrics** App!
         
         📌 **What is this app?**  
-        A **Streamlit-based interactive analysis platform** where you can analyze 📈 a vast amount of watch data!
+        A **Streamlit-based interactive analysis platform** where you can analyze 📈 a vast amount of watch data.<br><br>
         The data is sourced from one of the big watch portals and includes a wide range of watch brands and models.
         
         🎯 **What can you do here?**  
