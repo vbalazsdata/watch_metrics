@@ -180,10 +180,10 @@ with col5:
         height=400,
         margin=dict(l=20, r=20, t=40, b=60),
         xaxis_tickangle=-45,
-        plot_bgcolor="#ffffff",
-        paper_bgcolor="#ffffff",
-        font=dict(color="#262626"),
-        xaxis=dict(type='category')
+        #plot_bgcolor="#ffffff",
+        #paper_bgcolor="#ffffff",
+        #font=dict(color="#262626"),
+        #xaxis=dict(type='category')
     )
     st.plotly_chart(date_fig, use_container_width=True)
 
