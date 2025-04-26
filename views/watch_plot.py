@@ -205,7 +205,7 @@ with col4 :
         f"""
         <h2 style="text-align: left;">🔎 <b>Summary</b></h2>
         <p style="font-size: 18px;">
-        This is a summary especially for you of the data analysis based on the filters applied.
+        This is a summary especially for you of the data analysis based on the filters applied.<br><br>
         It appears that the most popular brand is <b>{top_brand}</b>, while the most preferred movement type is <b>{top_movement}</b>.<br><br>
         Looking at the recent trend, the market shows a <b>{trend}</b> movement based on the last 3 months.
         </p>
