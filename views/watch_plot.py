@@ -172,7 +172,7 @@ with col5:
     date_fig = go.Figure([go.Bar(
         x=date_counts.index.astype(str),
         y=date_counts.values,
-        marker_color='#262626'
+        #marker_color='#262626'
     )])
     date_fig.update_layout(
         #xaxis_title="",
