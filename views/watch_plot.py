@@ -182,8 +182,8 @@ with col3:
 
 
 # Second row: Bar chart for Date distribution, dummy text, Chatbox
-col4 = st.columns(1)
+col4, = st.columns(1)
 
-with col4:
+with col4 :
     st.write("Some dummy text here. This section can be used for providing additional insights or context about the bar chart above.")
 
