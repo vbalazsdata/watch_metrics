@@ -200,17 +200,27 @@ with col4 :
     else:
         trend = "stable ➡️"
     
-    # Write the summary
-    st.markdown(
-        f"""
-        <h2 style="text-align: left;">🔎 <b>Summary</b></h2>
-        <p style="font-size: 18px;">
-        This is a summary especially for you of the data analysis based on the filters applied.<br><br>
-        It appears that the most popular brand is <b>{top_brand}</b>, while the most preferred movement type is <b>{top_movement}</b>.<br><br>
-        Looking at the recent trend, the market shows a <b>{trend}</b> movement based on the last 3 months.
+# Write the fancy summary
+st.markdown(
+    f"""
+    <div style="
+        background-color: #f0f4f8;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        ">
+        <h2 style="text-align: center; color: #0a4d68;">🔎 <b>Summary</b></h2>
+        <p style="font-size: 18px; color: #333333; text-align: center;">
+        This is a personalized summary of the data analysis based on your selected filters.<br><br>
+        <span style="font-size: 20px;">✨ The most popular brand is <b>{top_brand}</b>.</span><br>
+        <span style="font-size: 20px;">⚙️ The most preferred movement type is <b>{top_movement}</b>.</span><br><br>
+        📈 Observing the recent trend, the market shows a <b>{trend}</b> movement based on the last 3 months.
         </p>
-        """,
-        unsafe_allow_html=True
-    )
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 
