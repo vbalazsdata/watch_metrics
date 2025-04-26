@@ -9,17 +9,16 @@ def intro():
     st.markdown(
         """
          
-        This project was born out of my passion for **data analysis** and **watch collecting**.  
-        The goal is to help me **analyze and foresee market trends** 🔎, while also making it easier to  
-        **rationalize and reorganize my watch collection** whenever I feel like it.  
+        This project was born out of my passion for **data analysis** and **watch collecting**.
+        The goal is to help me **analyze and foresee market trends** 🔎, while also making it easier to
+        **rationalize and reorganize my watch collection** whenever I feel like it.
 
-        💡 **A Personal Project**  
-        This app is just for me—I don’t plan to share it with a wider audience or make any money from it.  
-        It’s simply a tool to enhance my understanding of the market and optimize my collection.  
+        💡 **A Personal Project**              
+        This is simply a tool for me to enhance my understanding of the market and optimize my collection.
+        Also, I wanted to learn **Python** 🐍 and **Streamlit** 📊, so I decided to create this app as a final assignment for a Python course.
 
-        🚀 **What’s Next?**  
-        Many more features will be added over time! As I gain more knowledge in **Python** 🐍  
-        and as time allows, I'll continue to develop and refine this app.  
+        🚀 What’s Next?
+        This is just the beginning! As I continue learning Python and find more time, I'll keep expanding and improving this app.
 
         Stay tuned for more updates!
         """,

@@ -3,6 +3,13 @@ import streamlit as st
 st.set_page_config( layout="wide", page_title="Watch Metrics",page_icon="📊")
 
 # --- INFO ---
+
+intro_page = st.Page(
+    "views/intro.py",
+    title="Introduction",
+    icon=":material/account_circle:",
+)
+
 about_page = st.Page(
     "views/about.py",
     title="About this app",
@@ -10,12 +17,6 @@ about_page = st.Page(
     default=True,
 )
 
-intro_page = st.Page(
-    "views/intro.py",
-    title="Introduction",
-    icon=":material/account_circle:",
-    
-)
 
 # --- ANALYSIS ---
 watch_data = st.Page(

@@ -11,20 +11,20 @@ def about():
         ## Welcome to the **Watch Metrics** App!
         
         📌 **What is this app?**  
-        A **Streamlit-based interactive analysis platform** where you can visualize 📊, filter 🔍, and analyze 📈 a vast amount of watch data!
+        A **Streamlit-based interactive analysis platform** where you can analyze 📈 a vast amount of watch data!
+        The data is sourced from one of the big watch portals and includes a wide range of watch brands and models.
         
         🎯 **What can you do here?**  
-        - 📥 Download the latest watch data  
-        - 🔎 Perform detailed analyses on prices and trends  
-        - 📊 Easily overview market movements with interactive charts  
+        - 📥 Download watch related data
+        - 🔎 Perform detailed analyses on prices and trends
+        - 📊 Easily overview market movements with interactive charts
 
         🚀 **Why is this useful for you?**  
-        - If you're a watch collector, it helps you find the best deals ⏳💎  
         - If you're a trader, you can make better decisions based on market analysis 📈💰  
         - If you simply love watches, you can discover tons of interesting insights 🧐
         - Or just get some ideas if you want to reorganize your collection ☝️
 
-        🤩 Get started now and explore the world of watches from a new perspective!
+        🚀 Let’s explore and find out what the market has to say!
         """,
         unsafe_allow_html=True
     )
