@@ -20,7 +20,7 @@ def intro():
         🚀 **What’s Next?**
         This is just the beginning! As I continue learning Python and find more time, I'll keep expanding and improving this app.
 
-        ***Stay tuned for more updates!
+        **Stay tuned for more updates!
         """,
         unsafe_allow_html=True
     )
